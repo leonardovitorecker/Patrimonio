@@ -7,9 +7,9 @@ namespace Patrimonio.Models
     public class DbLocal
     {
         [Key]
-        public int Id { get; set; }
-        public string? nomeLocal{ get; set; }
-        public string? descricaoLocal { get; set; }
+        public int id { get; set; }
+        public string? nomelocal{ get; set; }
+        public string? descricaolocal { get; set; }
     }
    
 }

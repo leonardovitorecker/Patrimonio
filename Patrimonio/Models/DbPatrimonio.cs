@@ -7,21 +7,21 @@ namespace Patrimonio.Models
     public class DbPatrimonio
     {
         [Key]
-        public int Id { get; set; }
-        public string? numeEtiqueta { get; set; }
-        public string? nomePatrimonio { get; set; }
-        public string? descricaoPatrimonio { get; set; }
-        public decimal valorPatrimonio { get; set; }
-        public int idCategoria { get; set; }
-        public int idLocal { get; set; }
-        public string? marcaModelo { get; set; }
-        public DateTime dataAquisicao { get; set; }
-        public DateTime dataBaixa { get; set; }
-        public int numF { get; set; }
-        public string? numSerie { get; set; }
+        public int id { get; set; }
+        public string? numeetiqueta { get; set; }
+        public string? nomepatrimonio { get; set; }
+        public string? descricaopatrimonio { get; set; }
+        public decimal valorpatrimonio { get; set; }
+        public int idcategoria { get; set; }
+        public int idlocal { get; set; }
+        public string? marcamodelo { get; set; }
+        public DateTime dataqquisicao { get; set; }
+        public DateTime databaixa { get; set; }
+        public int numf { get; set; }
+        public string? numserie { get; set; }
         public string? situacao { get; set; }
 
-        public int idFornecedor { get; set; }
-        public DateTime dataGarantia { get; set; }
+        public int idfornecedor { get; set; }
+        public DateTime datagarantia { get; set; }
     }
 }

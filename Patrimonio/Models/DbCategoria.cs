@@ -13,7 +13,7 @@ namespace Patrimonio.Models
     {
         [Key]   
         public int id { get; set; }
-        public string? descricaoCategoria  { get; set; }
+        public string? descricaocategoria  { get; set; }
 
     }
 }

@@ -7,8 +7,8 @@ namespace Patrimonio.Models
     public class DbFornecedor
     {
        [Key]
-       public int Id { get; set; }
-        public string? nomeFornecedor { get; set; }
+       public int id { get; set; }
+        public string? nomefornecedor { get; set; }
         public string? endereco { get; set; }
         public string? fone { get; set; }
     }
