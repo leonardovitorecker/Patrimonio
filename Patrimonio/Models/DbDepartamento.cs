@@ -11,7 +11,7 @@ namespace Patrimonio.Models
         public string? nomedepartamento { get; set; }
         public string? descricaodepartamento { get; set; }
 
-     
+        
         public int idlocal { get; set; }
 
     }

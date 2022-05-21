@@ -7,7 +7,7 @@ var configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DBContext>(
-    options => options.UseNpgsql("Host=localhost;Port=5432;Database=patrimonio;User Id=postgres; Password=postgres") );
+    options => options.UseNpgsql("Host=localhost;Port=5432;Database=Patrimonio;User Id=postgres; Password=univel") );
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
