@@ -1,9 +1,8 @@
-﻿@model IEnumerable<Patrimonio.Models.DbLocal>
+﻿@model IEnumerable<Patrimonio.Models.DbFornecedor>
 
 @{
-    Layout = "_LayoutLocal";
-   
-    ViewData["Locais"] = "Index";
+     Layout = "_layoutFornecedor";
+    ViewData["Fornecedor"] = "Index";
 }
 
 <h1>Index</h1>
@@ -15,10 +14,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nomelocal)
+                @Html.DisplayNameFor(model => model.nomefornecedor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descricaolocal)
+                @Html.DisplayNameFor(model => model.endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fone)
             </th>
             <th></th>
         </tr>
@@ -27,10 +29,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nomelocal)
+                @Html.DisplayFor(modelItem => item.nomefornecedor)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descricaolocal)
+                @Html.DisplayFor(modelItem => item.endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fone)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

@@ -9,11 +9,11 @@ using Patrimonio.Models;
 
 namespace Patrimonio.Controllers
 {
-    public class DepartamentoesController : Controller
+    public class DepartamentosController : Controller
     {
         private readonly DBContext _context;
 
-        public DepartamentoesController(DBContext context)
+        public DepartamentosController(DBContext context)
         {
             _context = context;
         }
