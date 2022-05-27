@@ -5,28 +5,28 @@
     ViewData["Categorias"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Cadastrar</h1>
 
-<h4>DbCategoria</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="descricaocategoria" class="control-label"></label>
-                <input asp-for="descricaocategoria" class="form-control" />
+               
+                <input asp-for="descricaocategoria" class="form-control" placeholder="Digite a descrição" />
                 <span asp-validation-for="descricaocategoria" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Cadastar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary " /></a>
 </div>
 
 @section Scripts {

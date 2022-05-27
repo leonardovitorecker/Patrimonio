@@ -21,20 +21,20 @@ namespace Patrimonio.Controllers
         // GET: Categorias
         public async Task<IActionResult> Index()
         {
-              return _context.categoria != null ? 
-                          View(await _context.categoria.ToListAsync()) :
+              return _context.categorias != null ? 
+                          View(await _context.categorias.ToListAsync()) :
                           Problem("Entity set 'DBContext.categoria'  is null.");
         }
 
         // GET: Categorias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.categoria == null)
+            if (id == null || _context.categorias == null)
             {
                 return NotFound();
             }
 
-            var dbCategoria = await _context.categoria
+            var dbCategoria = await _context.categorias
                 .FirstOrDefaultAsync(m => m.id == id);
             if (dbCategoria == null)
             {
@@ -69,12 +69,12 @@ namespace Patrimonio.Controllers
         // GET: Categorias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.categoria == null)
+            if (id == null || _context.categorias == null)
             {
                 return NotFound();
             }
 
-            var dbCategoria = await _context.categoria.FindAsync(id);
+            var dbCategoria = await _context.categorias.FindAsync(id);
             if (dbCategoria == null)
             {
                 return NotFound();
@@ -120,12 +120,12 @@ namespace Patrimonio.Controllers
         // GET: Categorias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.categoria == null)
+            if (id == null || _context.categorias == null)
             {
                 return NotFound();
             }
 
-            var dbCategoria = await _context.categoria
+            var dbCategoria = await _context.categorias
                 .FirstOrDefaultAsync(m => m.id == id);
             if (dbCategoria == null)
             {
@@ -140,14 +140,14 @@ namespace Patrimonio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.categoria == null)
+            if (_context.categorias == null)
             {
                 return Problem("Entity set 'DBContext.categoria'  is null.");
             }
-            var dbCategoria = await _context.categoria.FindAsync(id);
+            var dbCategoria = await _context.categorias.FindAsync(id);
             if (dbCategoria != null)
             {
-                _context.categoria.Remove(dbCategoria);
+                _context.categorias.Remove(dbCategoria);
             }
             
             await _context.SaveChangesAsync();
@@ -156,7 +156,7 @@ namespace Patrimonio.Controllers
 
         private bool DbCategoriaExists(int id)
         {
-          return (_context.categoria?.Any(e => e.id == id)).GetValueOrDefault();
+          return (_context.categorias?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }

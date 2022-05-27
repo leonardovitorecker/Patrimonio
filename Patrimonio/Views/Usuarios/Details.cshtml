@@ -6,10 +6,10 @@
     ViewData["Usuario"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>DbUsuario</h4>
+   
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -33,6 +33,11 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.id"> 
+        <input type="submit" value="Editar" class="btn btn-primary " /></a> |
+    <a asp-action="Index"> <input type="submit" value="Ir para lista" class="btn btn-primary " /></a>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

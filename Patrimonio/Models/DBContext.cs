@@ -16,7 +16,7 @@ namespace Patrimonio.Models
 
          public DbSet<DbLocal> local { get; set; }
 
-        public DbSet<DbCategoria> categoria { get; set; }
+        public DbSet<DbCategoria> categorias { get; set; }
 
          public DbSet<DbFornecedor> fornecedor { get; set; }
 
