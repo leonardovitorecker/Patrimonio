@@ -21,9 +21,17 @@ namespace Patrimonio.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return _context.usuario != null ? 
-                          View(await _context.usuario.ToListAsync()) :
-                          Problem("Entity set 'DBContext.usuario'  is null.");
+            ViewBag.nome=(from c in _context.usuario
+                           select c.nome).Distinct();
+
+            ViewBag.login = (from  c in _context.usuario
+                             select c.login).Distinct();
+
+            ViewBag.senha = (from c  in _context.usuario
+                             select c.senha).Distinct();
+
+          return  View(await _context.usuario.ToListAsync());
+                          
         }
 
         // GET: Usuarios/Details/5

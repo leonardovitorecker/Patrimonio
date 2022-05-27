@@ -21,6 +21,7 @@ namespace Patrimonio.Controllers
         // GET: Departamentoes
         public async Task<IActionResult> Index()
         {
+          
               return _context.departamento != null ? 
                           View(await _context.departamento.ToListAsync()) :
                           Problem("Entity set 'DBContext.departamento'  is null.");
@@ -47,6 +48,12 @@ namespace Patrimonio.Controllers
         // GET: Departamentoes/Create
         public IActionResult Create()
         {
+            ViewBag.local = (from c in _context.local
+                             select new {
+                             text = c.nomelocal,
+                             value = c.id}).Distinct();
+
+            ViewBag.local2 = new SelectList(_context.local, "id", "nomelocal");
             return View();
         }
 

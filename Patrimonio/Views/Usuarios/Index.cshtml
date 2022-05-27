@@ -12,7 +12,14 @@
 <p>
     <a asp-action="Create"> <input type="submit" value="Criar um novo" class="btn btn-primary " /></a>
 </p>
-<table class="table">
+@using (Html.BeginForm())
+{
+    <text>nome</text>@Html.DropDownList("nome", new SelectList(ViewBag.nome))
+    <text>login</text>@Html.DropDownList("login", new SelectList(ViewBag.login))
+  <text>senha</text>@Html.DropDownList("senha", new SelectList(ViewBag.senha))
+}
+  <input type="submit" value"Procurar" />
+    <table class="table">
     <thead>
         <tr>
             <th>
