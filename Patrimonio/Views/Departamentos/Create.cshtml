@@ -4,14 +4,19 @@
      Layout = "_LayoutDepartamento";
     ViewData["Departamentos"] = "Create";
 }
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+    <link rel="stylesheet" href="~/Views/Departamentos/Departamentos.css" asp-append-version="true" />
 
 <h1>Cadastrar</h1>
-<p>
+<p>/*
     <div class="form-group">
         @*HtmlHelpers *@
         <text>local</text>@Html.DropDownList("nomelocal",new SelectList(ViewBag.local,"value","text"))
        
-    </div>
+    </div>*/
 </p>
 
 <hr />
@@ -33,7 +38,7 @@
                 @*Razor*@
               
                  
-                <select  asp-items=@ViewBag.local2 nome="nomelocal" placeholder="Selecione o local" ></select>
+                <select  asp-items=@ViewBag.local2 nome="nomelocal" asp-for="idlocal" class="form-control"></select>
 
             </div>
             <div class="form-group">

@@ -21,8 +21,13 @@ namespace Patrimonio.Controllers
         // GET: Departamentoes
         public async Task<IActionResult> Index()
         {
-          
-              return _context.departamento != null ? 
+            List<DtoDepartamento> dtoDepartamentos = (from d in _context.departamento
+                                                      join l in _context.local where d.idlocal equals l.id
+                                                      select new DtoDepartamento {
+                                                          id = d.id,
+                                                          nomedepartamento = d.nomedepartamento,
+                                                          nomelocal = l.nomelocal }).firstOrDefault();
+            return _context.departamento != null ? 
                           View(await _context.departamento.ToListAsync()) :
                           Problem("Entity set 'DBContext.departamento'  is null.");
         }
