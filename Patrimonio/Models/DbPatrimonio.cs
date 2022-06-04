@@ -22,6 +22,7 @@ namespace Patrimonio.Models
         public string? situacao { get; set; }
 
         public int idfornecedor { get; set; }
-        public DateTime datagarantia { get; set; } 
+        public DateTime datagarantia { get; set; }
+     
     }
 }

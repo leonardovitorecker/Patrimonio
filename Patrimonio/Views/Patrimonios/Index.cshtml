@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Patrimonio.Models.DbPatrimonio>
+﻿@model IEnumerable<Patrimonio.Models.DtoPatrimonio>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,9 +12,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.numeetiqueta)
-            </th>
+          
             <th>
                 @Html.DisplayNameFor(model => model.nomepatrimonio)
             </th>
@@ -25,44 +23,23 @@
                 @Html.DisplayNameFor(model => model.valorpatrimonio)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idcategoria)
+                @Html.DisplayNameFor(model => model.nomecategoria)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idlocal)
+                @Html.DisplayNameFor(model => model.nomelocal)
             </th>
+          
             <th>
-                @Html.DisplayNameFor(model => model.marcamodelo)
+                @Html.DisplayNameFor(model => model.nomefornecedor)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.dataqquisicao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.databaixa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.numf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.numserie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.situacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.idfornecedor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.datagarantia)
-            </th>
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.numeetiqueta)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.nomepatrimonio)
             </td>
@@ -73,35 +50,16 @@
                 @Html.DisplayFor(modelItem => item.valorpatrimonio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idcategoria)
+                @Html.DisplayFor(modelItem => item.nomecategoria)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idlocal)
+                @Html.DisplayFor(modelItem => item.nomelocal)
             </td>
+     
             <td>
-                @Html.DisplayFor(modelItem => item.marcamodelo)
+                @Html.DisplayFor(modelItem => item.nomefornecedor)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dataqquisicao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.databaixa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.numf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.numserie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.situacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idfornecedor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datagarantia)
-            </td>
+          
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.id">Details</a> |

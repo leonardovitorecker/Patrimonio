@@ -29,7 +29,9 @@ namespace Patrimonio.Controllers
                                                       {
                                                           id = p.id,
                                                           nomepatrimonio = p.nomepatrimonio,
-                                                          nomecategoria = c.descricaocategoria,
+                                                          descricaopatrimonio = p.descricaopatrimonio,
+                                                        valorpatrimonio = p.valorpatrimonio,
+                                                           nomecategoria = c.descricaocategoria,
                                                           nomelocal = l.nomelocal,
                                                           nomefornecedor = f.nomefornecedor
                                                       }).ToList();
@@ -52,6 +54,8 @@ namespace Patrimonio.Controllers
                                 {
                                     id = p.id,
                                     nomepatrimonio = p.nomepatrimonio,
+                                    descricaopatrimonio = p.descricaopatrimonio,
+                                    valorpatrimonio = p.valorpatrimonio,
                                     nomecategoria = c.descricaocategoria,
                                     nomelocal = l.nomelocal,
                                     nomefornecedor=f.nomefornecedor
@@ -105,6 +109,15 @@ namespace Patrimonio.Controllers
                                 {
                                     id = p.id,
                                     nomepatrimonio = p.nomepatrimonio,
+                                    descricaopatrimonio = p.descricaopatrimonio,
+                                    valorpatrimonio = p.valorpatrimonio,
+                                    numeetiqueta = p.numeetiqueta,
+                                    numf = p.numf,
+                                    databaixa = p.databaixa,
+                                    dataqquisicao = p.dataqquisicao,
+                                    marcamodelo = p.marcamodelo,
+                                    situacao = p.situacao,
+                                    numserie = p.numserie,
                                     nomecategoria = c.descricaocategoria,
                                     nomelocal = l.nomelocal,
                                     nomefornecedor = f.nomefornecedor
@@ -167,6 +180,15 @@ namespace Patrimonio.Controllers
                                 {
                                     id = p.id,
                                     nomepatrimonio = p.nomepatrimonio,
+                                    descricaopatrimonio=p.descricaopatrimonio,
+                                    valorpatrimonio=p.valorpatrimonio,
+                                    numeetiqueta=p.numeetiqueta,
+                                    numf=p.numf,
+                                    databaixa=p.databaixa,
+                                    dataqquisicao=p.dataqquisicao,
+                                    marcamodelo=p.marcamodelo,
+                                    situacao=p.situacao,
+                                    numserie=p.numserie,
                                     nomecategoria = c.descricaocategoria,
                                     nomelocal = l.nomelocal,
                                     nomefornecedor = f.nomefornecedor

@@ -1,4 +1,4 @@
-﻿@model Patrimonio.Models.DbPatrimonio
+﻿@model Patrimonio.Models.DtoPatrimonio
 
 @{
     ViewData["Title"] = "Edit";
@@ -34,14 +34,14 @@
                 <span asp-validation-for="valorpatrimonio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idcategoria" class="control-label"></label>
-                <input asp-for="idcategoria" class="form-control" />
-                <span asp-validation-for="idcategoria" class="text-danger"></span>
+                <label asp-for="nomecategoria" class="control-label"></label>
+                <input asp-for="nomecategoria" class="form-control" />
+                <span asp-validation-for="nomecategoria" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idlocal" class="control-label"></label>
-                <input asp-for="idlocal" class="form-control" />
-                <span asp-validation-for="idlocal" class="text-danger"></span>
+                <label asp-for="nomelocal" class="control-label"></label>
+                <input asp-for="nomelocal" class="form-control" />
+                <span asp-validation-for="nomelocal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="marcamodelo" class="control-label"></label>
@@ -74,9 +74,9 @@
                 <span asp-validation-for="situacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idfornecedor" class="control-label"></label>
-                <input asp-for="idfornecedor" class="form-control" />
-                <span asp-validation-for="idfornecedor" class="text-danger"></span>
+                <label asp-for="nomefornecedor" class="control-label"></label>
+                <input asp-for="nomefornecedor" class="form-control" />
+                <span asp-validation-for="nomefornecedor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="datagarantia" class="control-label"></label>
