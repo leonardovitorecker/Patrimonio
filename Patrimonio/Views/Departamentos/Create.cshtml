@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   
-    <link rel="stylesheet" href="~/Views/Departamentos/Departamentos.css" asp-append-version="true" />
 
 <h1>Cadastrar</h1>
 
@@ -18,21 +17,15 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-           
-                <input asp-for="nomedepartamento" class="form-control" placeholder="Digite a nome"  />
+                <input asp-for="nomedepartamento" class="form-control" placeholder="Digite o nome"  />
                 <span asp-validation-for="nomedepartamento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                
                 <input asp-for="descricaodepartamento" class="form-control"  placeholder="Digite a descrição"  />
                 <span asp-validation-for="descricaodepartamento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                @*Razor*@
-              
-                 
-                <select  asp-items=@ViewBag.local2 nome="nomelocal" asp-for="idlocal" class="form-control"></select>
-
+                <select  asp-items=@ViewBag.local2 nome="nomelocal" asp-for="idlocal" class="form-control" placeholder="Selecione o local"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="cadastrar" class="btn btn-primary" />
@@ -42,7 +35,7 @@
 </div>
 
 <div>
-    <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " /></a>
+    <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary"></a>
 </div>
 
 @section Scripts {

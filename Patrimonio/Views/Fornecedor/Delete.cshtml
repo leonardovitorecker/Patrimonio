@@ -8,24 +8,23 @@
 <h1>Deletar</h1>
 
 <h3>Voce deseja excluir?</h3>
-<div>
-    
+<div>  
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nomefornecedor)
+            Nome
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.nomefornecedor)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco)
+            Endereço
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.endereco)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fone)
+           Telefone
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.fone)
@@ -34,7 +33,11 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="id" />
-        <input type="submit" value="Deletar" class="btn btn-danger" /> |
-        <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " /></a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> 
+       
     </form>
+
+    <div>
+    <a asp-action="Index"> <input type="submit" value="Volta pra a lista" class="btn btn-primary " ></a>
+</div>
 </div>

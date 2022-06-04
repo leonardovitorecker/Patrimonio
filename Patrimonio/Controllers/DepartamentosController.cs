@@ -90,8 +90,8 @@ namespace Patrimonio.Controllers
         // GET: Departamentoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-         
-          
+
+            ViewBag.local = new SelectList(_context.local, "id", "nomelocal");
             if (id == null || _context.departamento == null)
             {
                 return NotFound();
@@ -102,6 +102,7 @@ namespace Patrimonio.Controllers
                                   select new DtoDepartamento
                                   {
                                       id = d.id,
+                                      idlocal=d.idlocal,
                                       nomedepartamento = d.nomedepartamento,
                                       descricaodepartamento = d.descricaodepartamento,
                                       nomelocal = l.nomelocal
@@ -161,6 +162,7 @@ namespace Patrimonio.Controllers
                                   select new DtoDepartamento
                                   {
                                       id = d.id,
+                                      idlocal=d.idlocal,
                                       nomedepartamento = d.nomedepartamento,
                                       descricaodepartamento = d.descricaodepartamento,
                                       nomelocal = l.nomelocal

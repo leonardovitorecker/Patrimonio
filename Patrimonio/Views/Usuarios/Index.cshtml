@@ -10,21 +10,20 @@
 <h1>Lista de usuarios</h1>
 
 <p>
-    <a asp-action="Create"> <input type="submit" value="Criar um novo" class="btn btn-primary " /></a>
+    <a asp-action="Create"> <input type="submit" value="Criar um novo" class="btn btn-primary " ></a>
 </p>
 
-  <input type="submit" value"Procurar" />
     <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nome)
+               Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.login)
+               Login
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.senha)
+              Senha
             </th>
             <th></th>
         </tr>

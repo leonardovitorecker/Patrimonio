@@ -5,9 +5,8 @@
     ViewData["Patrimonios"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
-<h4>DbPatrimonio</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,84 +14,77 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
             <div class="form-group">
-                <label asp-for="numeetiqueta" class="control-label"></label>
-                <input asp-for="numeetiqueta" class="form-control" />
-                <span asp-validation-for="numeetiqueta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="nomepatrimonio" class="control-label"></label>
-                <input asp-for="nomepatrimonio" class="form-control" />
+                <input asp-for="nomepatrimonio" class="form-control"  placeholder="Digite a nome do patrimonio" />
                 <span asp-validation-for="nomepatrimonio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="descricaopatrimonio" class="control-label"></label>
-                <input asp-for="descricaopatrimonio" class="form-control" />
+                <input asp-for="numeetiqueta" class="form-control"  placeholder="Digite a número da etiqueta" />
+                <span asp-validation-for="numeetiqueta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="descricaopatrimonio" class="form-control"  placeholder="Digite a descrição do patrimonio" />
                 <span asp-validation-for="descricaopatrimonio" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="valorpatrimonio" class="control-label"></label>
-                <input asp-for="valorpatrimonio" class="form-control" />
+            <div class="form-group">     
+                <input asp-for="valorpatrimonio" class="form-control"  placeholder="Digite o valor do patrimonio" />
                 <span asp-validation-for="valorpatrimonio" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="nomecategoria" class="control-label"></label>
-                <input asp-for="nomecategoria" class="form-control" />
-                <span asp-validation-for="nomecategoria" class="text-danger"></span>
+               <div class="form-group">
+                <select  asp-items=@ViewBag.categoria1 nome="nomecategoria" asp-for="idcategoria"
+                class="form-control" placeholder="Selecione a categoria"> </select>
             </div>
             <div class="form-group">
-                <label asp-for="nomelocal" class="control-label"></label>
-                <input asp-for="nomelocal" class="form-control" />
-                <span asp-validation-for="nomelocal" class="text-danger"></span>
+                <div class="form-group">
+                <select  asp-items=@ViewBag.local1 nome="nomelocal" asp-for="idlocal"
+                class="form-control" placeholder="Selecione o local"></select>
+                
+            </div>
+               </div>
+             <div class="form-group">
+               <div class="form-group">
+               <select  asp-items=@ViewBag.fornecedor1 nome="nomefornecedor" asp-for="idfornecedor"
+                class="form-control" placeholder="Selecione o fornecedor"></select>
+            </div>
             </div>
             <div class="form-group">
-                <label asp-for="marcamodelo" class="control-label"></label>
-                <input asp-for="marcamodelo" class="form-control" />
+                <input asp-for="marcamodelo" class="form-control" placeholder="Digite a marca ou modelo" />
                 <span asp-validation-for="marcamodelo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="dataaquisicao" class="control-label"></label>
-                <input asp-for="dataaquisicao" class="form-control" />
-                <span asp-validation-for="dataaquisicao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="databaixa" class="control-label"></label>
-                <input asp-for="databaixa" class="form-control" />
-                <span asp-validation-for="databaixa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="numf" class="control-label"></label>
-                <input asp-for="numf" class="form-control" />
-                <span asp-validation-for="numf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="numserie" class="control-label"></label>
-                <input asp-for="numserie" class="form-control" />
-                <span asp-validation-for="numserie" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="situacao" class="control-label"></label>
-                <input asp-for="situacao" class="form-control" />
+             <div class="form-group">
+                <input asp-for="situacao" class="form-control"  placeholder="Digite a situação"/>
                 <span asp-validation-for="situacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="nomefornecedor" class="control-label"></label>
-                <input asp-for="nomefornecedor" class="form-control" />
-                <span asp-validation-for="nomefornecedor" class="text-danger"></span>
+                <input asp-for="numserie" class="form-control"  placeholder="Digite o número de serie"/>
+                <span asp-validation-for="numserie" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <input asp-for="numf" class="form-control" placeholder="Digite o número" />
+                <span asp-validation-for="numf" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="datagarantia" class="control-label"></label>
-                <input asp-for="datagarantia" class="form-control" />
+                <input asp-for="dataaquisicao" class="form-control"  placeholder="Digite a data da aquisição"/>
+                <span asp-validation-for="dataaquisicao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="databaixa" class="form-control"  placeholder="Digite a data da baixa" />
+                <span asp-validation-for="databaixa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="datagarantia" class="form-control" placeholder="Digite a data da garantia" />
                 <span asp-validation-for="datagarantia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
+
         </form>
     </div>
 </div>
 
+
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " ></a>
 </div>
 
 @section Scripts {

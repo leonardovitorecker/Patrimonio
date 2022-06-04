@@ -9,7 +9,6 @@
 
 <h1>Editar</h1>
 
-<h4>DbCategoria</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,7 +16,6 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
             <div class="form-group">
-                
                 <input asp-for="descricaocategoria" class="form-control"  placeholder="Digite a descrição" />
                 <span asp-validation-for="descricaocategoria" class="text-danger"></span>
             </div>
@@ -29,7 +27,7 @@
 </div>
 
 <div>
-    <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary " /></a>
+    <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary" ></a>
 </div>
 
 @section Scripts {

@@ -12,7 +12,7 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.descricaocategoria)
+           Descrição 
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.descricaocategoria)
@@ -20,6 +20,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.id"><input type="submit" value="Editar" class="btn btn-primary " /></a> 
-    <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary " /></a>
+    <a asp-action="Edit" asp-route-id="@Model?.id"><input type="submit" value="Editar" class="btn btn-primary"></a> 
+    <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary"></a>
 </div>

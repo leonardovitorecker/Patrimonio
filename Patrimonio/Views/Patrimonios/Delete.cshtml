@@ -4,93 +4,92 @@
      Layout = "_LayoutPatrimonio";
     ViewData["Patrimonios"] = "Delete";
 }
-<h1>Delete</h1>
+<h1>Deletar</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Voce deseja deletar realmente?</h3>
 <div>
-    <h4>DbPatrimonio</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.numeetiqueta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.numeetiqueta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nomepatrimonio)
+         <dt class = "col-sm-2">
+          Nome do patrimonio  
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.nomepatrimonio)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.descricaopatrimonio)
+         Número da etiqueta 
+        </dt>
+        <dd class = "col-sm-10">
+           @Html.DisplayFor(model => model.numeetiqueta)
+        </dd>
+        <dt class = "col-sm-2">
+           Descrição do patrimonio
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.descricaopatrimonio)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.valorpatrimonio)
+           Valor do patrimonio
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.valorpatrimonio)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nomecategoria)
+           Categoria
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.nomecategoria)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nomelocal)
+           Local
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.nomelocal)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.marcamodelo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.marcamodelo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.dataaquisicao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.dataaquisicao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.databaixa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.databaixa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.numf)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.numf)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.numserie)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.numserie)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.situacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.situacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nomefornecedor)
+         <dt class = "col-sm-2">
+            Fornecedor
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.nomefornecedor)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datagarantia)
+           Marca ou Modelo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.marcamodelo)
+        </dd>
+        <dt class = "col-sm-2">
+           Situação
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.situacao)
+        </dd>
+        <dt class = "col-sm-2">
+           Número de serie
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numserie)
+        </dd>
+         <dt class = "col-sm-2">
+            Número
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numf)
+        </dd>
+        <dt class = "col-sm-2">
+          Data aquisição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataaquisicao)
+        </dd>
+        <dt class = "col-sm-2">
+           Data da baixa
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.databaixa)
+        </dd>
+        <dt class = "col-sm-2">
+          Data garantia
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.datagarantia)
@@ -99,7 +98,10 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> 
+       
     </form>
+    <div>
+    <a asp-action="Index"> <input type="submit" value="Volta pra a lista" class="btn btn-primary " ></a>
+</div>
 </div>

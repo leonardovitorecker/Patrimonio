@@ -27,13 +27,13 @@ namespace Patrimonio.Controllers
                                                  join f in _context.fornecedor on p.idfornecedor equals f.id
                                                  select new DtoPatrimonio
                                                       {
-                                                          id = p.id,
-                                                          nomepatrimonio = p.nomepatrimonio,
-                                                          descricaopatrimonio = p.descricaopatrimonio,
-                                                        valorpatrimonio = p.valorpatrimonio,
-                                                           nomecategoria = c.descricaocategoria,
-                                                          nomelocal = l.nomelocal,
-                                                          nomefornecedor = f.nomefornecedor
+                                                              id = p.id,
+                                                              nomepatrimonio = p.nomepatrimonio,
+                                                              descricaopatrimonio = p.descricaopatrimonio,
+                                                              valorpatrimonio = p.valorpatrimonio,
+                                                              nomecategoria = c.descricaocategoria,
+                                                              nomelocal = l.nomelocal,
+                                                              nomefornecedor = f.nomefornecedor
                                                       }).ToList();
             return View(dtoPatrimonio);
         }
@@ -56,9 +56,17 @@ namespace Patrimonio.Controllers
                                     nomepatrimonio = p.nomepatrimonio,
                                     descricaopatrimonio = p.descricaopatrimonio,
                                     valorpatrimonio = p.valorpatrimonio,
-                                    nomecategoria = c.descricaocategoria,
+                                    marcamodelo = p.marcamodelo,
+                                    numserie = p.numserie,
+                                    situacao = p.situacao,
+                                    numeetiqueta = p.numeetiqueta,
+                                    numf = p.numf,
+                                    databaixa = p.databaixa,
+                                    dataaquisicao = p.dataaquisicao,
+                                    datagarantia = p.datagarantia,
                                     nomelocal = l.nomelocal,
-                                    nomefornecedor=f.nomefornecedor
+                                    nomecategoria = c.descricaocategoria,
+                                    nomefornecedor = f.nomefornecedor
                                 }).FirstOrDefault();
             if (dbPatrimonio == null)
             {
@@ -82,7 +90,7 @@ namespace Patrimonio.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,numeetiqueta,nomepatrimonio,descricaopatrimonio,valorpatrimonio,idcategoria,idlocal,marcamodelo,dataqquisicao,databaixa,numf,numserie,situacao,idfornecedor,datagarantia")] DbPatrimonio dbPatrimonio)
+        public async Task<IActionResult> Create([Bind("id,numeetiqueta,nomepatrimonio,descricaopatrimonio,valorpatrimonio,idcategoria,idlocal,marcamodelo,dataaquisicao,databaixa,numf,numserie,situacao,idfornecedor,datagarantia")] DbPatrimonio dbPatrimonio)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +104,9 @@ namespace Patrimonio.Controllers
         // GET: Patrimonios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.local1 = new SelectList(_context.local, "id", "nomelocal");
+            ViewBag.fornecedor1 = new SelectList(_context.fornecedor, "id", "nomefornecedor");
+            ViewBag.categoria1 = new SelectList(_context.categorias, "id", "descricaocategoria");
             if (id == null || _context.patrimonio == null)
             {
                 return NotFound();
@@ -111,17 +122,20 @@ namespace Patrimonio.Controllers
                                     nomepatrimonio = p.nomepatrimonio,
                                     descricaopatrimonio = p.descricaopatrimonio,
                                     valorpatrimonio = p.valorpatrimonio,
+                                    marcamodelo = p.marcamodelo,
+                                    numserie = p.numserie,
+                                    situacao = p.situacao,
                                     numeetiqueta = p.numeetiqueta,
                                     numf = p.numf,
                                     databaixa = p.databaixa,
                                     dataaquisicao = p.dataaquisicao,
-                                    marcamodelo = p.marcamodelo,
-                                    situacao = p.situacao,
-                                    numserie = p.numserie,
                                     datagarantia=p.datagarantia,
-                                    nomecategoria = c.descricaocategoria,
                                     nomelocal = l.nomelocal,
-                                    nomefornecedor = f.nomefornecedor
+                                    nomecategoria = c.descricaocategoria,
+                                    nomefornecedor = f.nomefornecedor,
+                                    idlocal=p.idlocal,
+                                    idfornecedor=p.idfornecedor,
+                                    idcategoria=p.idcategoria
                                 }).FirstOrDefault();
             if (dbPatrimonio == null)
             {
@@ -135,7 +149,7 @@ namespace Patrimonio.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,numeetiqueta,nomepatrimonio,descricaopatrimonio,valorpatrimonio,idcategoria,idlocal,marcamodelo,dataqquisicao,databaixa,numf,numserie,situacao,idfornecedor,datagarantia")] DbPatrimonio dbPatrimonio)
+        public async Task<IActionResult> Edit(int id, [Bind("id,numeetiqueta,nomepatrimonio,descricaopatrimonio,valorpatrimonio,idcategoria,idlocal,marcamodelo,dataaquisicao,databaixa,numf,numserie,situacao,idfornecedor,datagarantia")] DbPatrimonio dbPatrimonio)
         {
             if (id != dbPatrimonio.id)
             {
@@ -181,18 +195,18 @@ namespace Patrimonio.Controllers
                                 {
                                     id = p.id,
                                     nomepatrimonio = p.nomepatrimonio,
-                                    descricaopatrimonio=p.descricaopatrimonio,
-                                    valorpatrimonio=p.valorpatrimonio,
-                                    numeetiqueta=p.numeetiqueta,
-                                    numf=p.numf,
-                                    databaixa=p.databaixa,
-                                    dataaquisicao=p.dataaquisicao,
-                                    marcamodelo=p.marcamodelo,
-                                    datagarantia=p.datagarantia,
-                                    situacao =p.situacao,
-                                    numserie=p.numserie,
-                                    nomecategoria = c.descricaocategoria,
+                                    descricaopatrimonio = p.descricaopatrimonio,
+                                    valorpatrimonio = p.valorpatrimonio,
+                                    marcamodelo = p.marcamodelo,
+                                    numserie = p.numserie,
+                                    situacao = p.situacao,
+                                    numeetiqueta = p.numeetiqueta,
+                                    numf = p.numf,
+                                    databaixa = p.databaixa,
+                                    dataaquisicao = p.dataaquisicao,
+                                    datagarantia = p.datagarantia,
                                     nomelocal = l.nomelocal,
+                                    nomecategoria = c.descricaocategoria,
                                     nomefornecedor = f.nomefornecedor
                                 }).FirstOrDefault();
             if (dbPatrimonio == null)
