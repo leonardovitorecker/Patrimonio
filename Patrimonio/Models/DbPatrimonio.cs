@@ -15,7 +15,7 @@ namespace Patrimonio.Models
         public int idcategoria { get; set; }
         public int idlocal { get; set; }
         public string? marcamodelo { get; set; }
-        public DateTime dataqquisicao { get; set; }
+        public DateTime dataaquisicao { get; set; }
         public DateTime databaixa { get; set; }
         public int numf { get; set; }
         public string? numserie { get; set; }

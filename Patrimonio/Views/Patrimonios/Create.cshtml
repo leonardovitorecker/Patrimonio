@@ -1,7 +1,8 @@
 ﻿@model Patrimonio.Models.DbPatrimonio
 
 @{
-    ViewData["Title"] = "Create";
+     Layout = "_LayoutPatrimonio";
+    ViewData["Patrimonios"] = "Create";
 }
 
 <h1>Create</h1>
@@ -33,14 +34,12 @@
                 <span asp-validation-for="valorpatrimonio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idcategoria" class="control-label"></label>
-                <input asp-for="idcategoria" class="form-control" />
-                <span asp-validation-for="idcategoria" class="text-danger"></span>
+                 <label asp-for="idcategoria" class="control-label"></label>
+                <select  asp-items=@ViewBag.categoria nome="nomecategoria" asp-for="idcategoria" class="form-control"></select>
             </div>
             <div class="form-group">
-                <label asp-for="idlocal" class="control-label"></label>
-                <input asp-for="idlocal" class="form-control" />
-                <span asp-validation-for="idlocal" class="text-danger"></span>
+                 <label asp-for="idlocal" class="control-label"></label>
+                <select  asp-items=@ViewBag.local nome="nomelocal" asp-for="idlocal" class="form-control"></select>
             </div>
             <div class="form-group">
                 <label asp-for="marcamodelo" class="control-label"></label>
@@ -48,9 +47,9 @@
                 <span asp-validation-for="marcamodelo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="dataqquisicao" class="control-label"></label>
-                <input asp-for="dataqquisicao" class="form-control" />
-                <span asp-validation-for="dataqquisicao" class="text-danger"></span>
+                <label asp-for="dataaquisicao" class="control-label"></label>
+                <input asp-for="dataaquisicao" class="form-control" />
+                <span asp-validation-for="dataaquisicao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="databaixa" class="control-label"></label>
@@ -73,9 +72,8 @@
                 <span asp-validation-for="situacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idfornecedor" class="control-label"></label>
-                <input asp-for="idfornecedor" class="form-control" />
-                <span asp-validation-for="idfornecedor" class="text-danger"></span>
+                  <label asp-for="idfornecedor" class="control-label"></label>
+                <select  asp-items=@ViewBag.fornecedor nome="nomefornecedor" asp-for="idfornecedor" class="form-control"></select>
             </div>
             <div class="form-group">
                 <label asp-for="datagarantia" class="control-label"></label>

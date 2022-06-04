@@ -1,7 +1,8 @@
 ﻿@model Patrimonio.Models.DtoPatrimonio
 
 @{
-    ViewData["Title"] = "Edit";
+     Layout = "_LayoutPatrimonio";
+    ViewData["Patrimonios"] = "Edit";
 }
 
 <h1>Edit</h1>
@@ -49,9 +50,9 @@
                 <span asp-validation-for="marcamodelo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="dataqquisicao" class="control-label"></label>
-                <input asp-for="dataqquisicao" class="form-control" />
-                <span asp-validation-for="dataqquisicao" class="text-danger"></span>
+                <label asp-for="dataaquisicao" class="control-label"></label>
+                <input asp-for="dataaquisicao" class="form-control" />
+                <span asp-validation-for="dataaquisicao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="databaixa" class="control-label"></label>

@@ -10,6 +10,7 @@ builder.Services.AddDbContext<DBContext>(
     options => options.UseNpgsql("Host=localhost;Port=5432;Database=Patrimonio;User Id=postgres; Password=univel") );
 var app = builder.Build();
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

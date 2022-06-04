@@ -1,4 +1,7 @@
-﻿namespace Patrimonio.Models
+﻿
+
+
+namespace Patrimonio.Models
 {
     public class DtoPatrimonio
     {
@@ -11,12 +14,14 @@
         public string nomecategoria { get; set; }
 
         public string? marcamodelo { get; set; }
-        public DateTime dataqquisicao { get; set; }
+        public DateTime dataaquisicao { get; set; }
         public DateTime databaixa { get; set; }
         public int numf { get; set; }
         public string? numserie { get; set; }
         public string? situacao { get; set; }
 
         public string? numeetiqueta { get; set; }
+        public DateTime datagarantia { get; set; }
+
     }
 }

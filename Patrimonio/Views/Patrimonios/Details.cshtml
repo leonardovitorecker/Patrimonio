@@ -1,9 +1,9 @@
 ﻿@model Patrimonio.Models.DbPatrimonio
 
 @{
-    ViewData["Title"] = "Details";
+     Layout = "_LayoutPatrimonio";
+    ViewData["Patrimonios"] = "Details";
 }
-
 <h1>Details</h1>
 
 <div>
@@ -53,10 +53,10 @@
             @Html.DisplayFor(model => model.marcamodelo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.dataqquisicao)
+            @Html.DisplayNameFor(model => model.dataaquisicao)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.dataqquisicao)
+            @Html.DisplayFor(model => model.dataaquisicao)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.databaixa)
