@@ -1,0 +1,102 @@
+﻿@model Patrimonio.Models.DbPatrimonio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DbPatrimonio</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.numeetiqueta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numeetiqueta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nomepatrimonio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nomepatrimonio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descricaopatrimonio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descricaopatrimonio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.valorpatrimonio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.valorpatrimonio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idcategoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idcategoria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idlocal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idlocal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.marcamodelo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.marcamodelo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataqquisicao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataqquisicao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.databaixa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.databaixa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.numf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.numserie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numserie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.situacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.situacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idfornecedor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idfornecedor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.datagarantia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.datagarantia)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

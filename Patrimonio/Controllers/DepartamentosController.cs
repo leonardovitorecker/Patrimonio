@@ -22,14 +22,16 @@ namespace Patrimonio.Controllers
         public async Task<IActionResult> Index()
         {
             List<DtoDepartamento> dtoDepartamentos = (from d in _context.departamento
-                                                      join l in _context.local where d.idlocal equals l.id
-                                                      select new DtoDepartamento {
+                                                      join l in _context.local on d.idlocal equals l.id
+                                                      select new DtoDepartamento
+                                                      {
                                                           id = d.id,
                                                           nomedepartamento = d.nomedepartamento,
-                                                          nomelocal = l.nomelocal }).firstOrDefault();
-            return _context.departamento != null ? 
-                          View(await _context.departamento.ToListAsync()) :
-                          Problem("Entity set 'DBContext.departamento'  is null.");
+                                                          descricaodepartamento=d.descricaodepartamento,
+                                                          nomelocal = l.nomelocal
+                                                      }).ToList();
+            return View(dtoDepartamentos);
+                         
         }
 
         // GET: Departamentoes/Details/5
@@ -40,8 +42,15 @@ namespace Patrimonio.Controllers
                 return NotFound();
             }
 
-            var dbDepartamento = await _context.departamento
-                .FirstOrDefaultAsync(m => m.id == id);
+            var dbDepartamento = (from d in _context.departamento
+                                  join l in _context.local on d.idlocal equals l.id
+                                  select new DtoDepartamento
+                                  {
+                                      id = d.id,
+                                      nomedepartamento = d.nomedepartamento,
+                                      descricaodepartamento = d.descricaodepartamento,
+                                      nomelocal = l.nomelocal
+                                  }).FirstOrDefault();
             if (dbDepartamento == null)
             {
                 return NotFound();
@@ -81,12 +90,22 @@ namespace Patrimonio.Controllers
         // GET: Departamentoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+         
+          
             if (id == null || _context.departamento == null)
             {
                 return NotFound();
             }
 
-            var dbDepartamento = await _context.departamento.FindAsync(id);
+           var  dbDepartamento = (from d in _context.departamento
+                                  join l in _context.local on d.idlocal equals l.id
+                                  select new DtoDepartamento
+                                  {
+                                      id = d.id,
+                                      nomedepartamento = d.nomedepartamento,
+                                      descricaodepartamento = d.descricaodepartamento,
+                                      nomelocal = l.nomelocal
+                                  }).FirstOrDefault();
             if (dbDepartamento == null)
             {
                 return NotFound();
@@ -137,8 +156,15 @@ namespace Patrimonio.Controllers
                 return NotFound();
             }
 
-            var dbDepartamento = await _context.departamento
-                .FirstOrDefaultAsync(m => m.id == id);
+            var dbDepartamento = (from d in _context.departamento
+                                  join l in _context.local on d.idlocal equals l.id
+                                  select new DtoDepartamento
+                                  {
+                                      id = d.id,
+                                      nomedepartamento = d.nomedepartamento,
+                                      descricaodepartamento = d.descricaodepartamento,
+                                      nomelocal = l.nomelocal
+                                  }).FirstOrDefault();
             if (dbDepartamento == null)
             {
                 return NotFound();

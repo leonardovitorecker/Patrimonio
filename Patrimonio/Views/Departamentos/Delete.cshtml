@@ -1,4 +1,4 @@
-﻿@model Patrimonio.Models.DbDepartamento
+﻿@model Patrimonio.Models.DtoDepartamento
 
 @{
      Layout = "_LayoutDepartamento";
@@ -25,16 +25,16 @@
             @Html.DisplayFor(model => model.descricaodepartamento)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.idlocal)
+            @Html.DisplayNameFor(model => model.nomelocal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.idlocal)
+            @Html.DisplayFor(model => model.nomelocal)
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="id" />
         <input type="submit" value="Deletar" class="btn btn-danger" /> |
-        <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary " /></a>
+        <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary " ></a>
     </form>
 </div>

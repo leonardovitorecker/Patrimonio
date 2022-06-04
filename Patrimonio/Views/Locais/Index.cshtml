@@ -15,7 +15,8 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nomelocal)
+                nome local
+                @*@Html.DisplayNameFor(model => model.nomelocal)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.descricaolocal)
@@ -34,11 +35,11 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id"> 
-                    <input type="submit" value="Editar" class="btn btn-primary " /></a> |
+                    <input type="submit" value="Editar" class="btn btn-primary " ></a> 
                 <a asp-action="Details" asp-route-id="@item.id"> 
-                    <input type="submit" value="Detalhes" class="btn btn-primary " /></a> |
+                    <input type="submit" value="Detalhes" class="btn btn-primary " ></a> 
                 <a asp-action="Delete" asp-route-id="@item.id">
-                    <input type="submit" value="Deletar" class="btn btn-primary " /></a>
+                    <input type="submit" value="Deletar" class="btn btn-primary " ></a>
             </td>
         </tr>
 }

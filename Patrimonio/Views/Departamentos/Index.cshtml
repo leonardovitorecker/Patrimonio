@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Patrimonio.Models.DbDepartamento>
+﻿@model IEnumerable<Patrimonio.Models.DtoDepartamento>
 
 @{
     
@@ -21,8 +21,9 @@
                 @Html.DisplayNameFor(model => model.descricaodepartamento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idlocal)
+                @Html.DisplayNameFor(model => model.nomelocal)
             </th>
+             
             <th></th>
         </tr>
     </thead>
@@ -36,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.descricaodepartamento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idlocal)
+                @Html.DisplayFor(modelItem => item.nomelocal)
             </td>
             <td>
                 
