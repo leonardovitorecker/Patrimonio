@@ -5,80 +5,82 @@
     ViewData["Patrimonios"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Cadastrar patrimonio</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+                 <div class="row justify-content-center" style="color:darkred">
+            <div class="col-5">
+               <div class="card" style="border-color:darkolivegreen">
+            <div class="card-header text-center">
+                <h2>Cadastro de Patrimonio</h2>
+             </div>
+           <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="nomepatrimonio" class="form-control"  placeholder="Digite a nome do patrimonio" />
                 <span asp-validation-for="nomepatrimonio" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="numeetiqueta" class="form-control"  placeholder="Digite a número da etiqueta" />
                 <span asp-validation-for="numeetiqueta" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="descricaopatrimonio" class="form-control"  placeholder="Digite a descrição do patrimonio" />
                 <span asp-validation-for="descricaopatrimonio" class="text-danger"></span>
             </div>
-            <div class="form-group">     
+          <div class="card-body md-3" style="border-color:darkgoldenrod">  
                 <input asp-for="valorpatrimonio" class="form-control"  placeholder="Digite o valor do patrimonio" />
                 <span asp-validation-for="valorpatrimonio" class="text-danger"></span>
             </div>
-            <div class="form-group">
+           <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <select  asp-items=@ViewBag.categoria nome="nomecategoria" asp-for="idcategoria"
-                class="form-control" placeholder="Selecione a categoria"> </select>
+                class="form-control"> <option value="0">selecione a categoria</option> </select>
             </div>
-            <div class="form-group">
+           <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <select  asp-items=@ViewBag.local nome="nomelocal" asp-for="idlocal"
-                class="form-control" placeholder="Selecione o local"></select>
+                class="form-control"> <option value="0">selecione o local</option></select>
             </div>
-             <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <select  asp-items=@ViewBag.fornecedor nome="nomefornecedor" asp-for="idfornecedor"
-                class="form-control" placeholder="Selecione o fornecedor"></select>
+                class="form-control"> <option value="0">selecione o fornecedor</option></select>
             </div>
-            <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="marcamodelo" class="form-control" placeholder="Digite a marca ou modelo" />
                 <span asp-validation-for="marcamodelo" class="text-danger"></span>
             </div>
-             <div class="form-group">
+             <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="situacao" class="form-control"  placeholder="Digite a situação"/>
                 <span asp-validation-for="situacao" class="text-danger"></span>
             </div>
-            <div class="form-group">
+           <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="numserie" class="form-control"  placeholder="Digite o número de serie"/>
                 <span asp-validation-for="numserie" class="text-danger"></span>
             </div>
-             <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="numf" class="form-control" placeholder="Digite o número" />
                 <span asp-validation-for="numf" class="text-danger"></span>
             </div>
-            <div class="form-group">
+           <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="dataaquisicao" class="form-control"  placeholder="Digite a data da aquisição"/>
                 <span asp-validation-for="dataaquisicao" class="text-danger"></span>
             </div>
-            <div class="form-group">
+          <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="databaixa" class="form-control"  placeholder="Digite a data da baixa" />
                 <span asp-validation-for="databaixa" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="datagarantia" class="form-control" placeholder="Digite a data da garantia" />
                 <span asp-validation-for="datagarantia" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="card-footer md-2">
                 <input type="submit" value="Cadastrar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>.
+                <div>.
      <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " ></a>
 </div>
+            </div>
+       </div>
+    </div>
+</div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

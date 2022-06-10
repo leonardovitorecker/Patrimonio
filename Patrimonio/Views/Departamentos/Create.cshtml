@@ -9,34 +9,39 @@
   
   
 
-<h1>Cadastrar</h1>
-
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+      <form asp-action="Create">
+         <div class="row justify-content-center" style="color:darkred">
+            <div class="col-5">
+               <div class="card" style="border-color:darkolivegreen">
+            <div class="card-header text-center">
+                <h2>Cadastro de Departamento</h2>
+             </div>
+           <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="nomedepartamento" class="form-control" placeholder="Digite o nome"  />
                 <span asp-validation-for="nomedepartamento" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="descricaodepartamento" class="form-control"  placeholder="Digite a descrição"  />
                 <span asp-validation-for="descricaodepartamento" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <select  asp-items=@ViewBag.local2 nome="nomelocal" asp-for="idlocal" class="form-control" placeholder="Selecione o local"></select>
+          <div class="card-body md-3" style="border-color:darkgoldenrod">
+                <select  asp-items=@ViewBag.local2 nome="nomelocal" asp-for="idlocal" class="form-control">
+                     <option value="0">selecione o local</option></select>
             </div>
-            <div class="form-group">
+            <div class="card-footer md-2">
                 <input type="submit" value="cadastrar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
+                <div>
     <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary"></a>
 </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+        </form>
+ 
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

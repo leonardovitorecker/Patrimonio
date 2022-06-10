@@ -5,33 +5,35 @@
     ViewData["Locais"] = "Edit";
 }
 
-<h1>Editar</h1>
-
-
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row justify-content-center" style="color:darkred">
+            <div class="col-5">
+               <div class="card" style="border-color:darkolivegreen">
+            <div class="card-header text-center">
+                <h2>Editar local</h2>
+             </div>
             <input type="hidden" asp-for="id" />
-            <div class="form-group">
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="nomelocal" class="form-control" placeholder="Digite o nome"  />
                 <span asp-validation-for="nomelocal" class="text-danger"></span>
             </div>
-            <div class="form-group"> 
+            <div class="card-body md-3" style="border-color:darkgoldenrod">
                 <input asp-for="descricaolocal" class="form-control"  placeholder="Digite a descrição" />
                 <span asp-validation-for="descricaolocal" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="card-footer md-2">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
+                <div>
     <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " ></a>
 </div>
+            </div>
+       </div>
+    </div>
+</div>
+</form>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -5,28 +5,29 @@
     ViewData["Categorias"] = "Create";
 }
 
-<h1>Cadastrar</h1>
-
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="descricaocategoria" class="form-control" placeholder="Digite a descrição" />
-                <span asp-validation-for="descricaocategoria" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Cadastar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary"></a>
-</div>
+<form asp-action="Create"> 
+      <div class="row justify-content-center" style="color:darkred">
+            <div class="col-5">
+                <div class="card" style="border-color:darkolivegreen">
+                    <div class="card-header text-center">
+                         <h2>Cadastro de categoria</h2>
+                    </div>
+                     <div class="card-body md-3" style="border-color:darkgoldenrod">
+                          <input asp-for="descricaocategoria" class="form-control" placeholder="Digite a descrição" />
+                          <span asp-validation-for="descricaocategoria" class="text-danger"></span>
+                     </div>
+                    <div class="card-footer md-2">
+                          <input type="submit" value="Cadastar" class="btn btn-primary" />
+                    <div>
+                         <a asp-action="Index"> <input type="submit" value="Voltar para lista" class="btn btn-primary"></a>
+                    </div>
+                 </div>
+              </div>
+          </div>
+     </div>
+ </form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
