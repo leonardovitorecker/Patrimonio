@@ -32,14 +32,15 @@
             </div>
             <div class="card-footer">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
-                <div>
-    <a asp-action="Index"> <input type="submit" value="Ir para lista" class="btn btn-primary " ></a>
-</div>
-            </div>
+                </div>
+          
        </div>
     </div>
 </div>
 </form>
+  <div>
+    <a asp-action="Index"> <input type="submit" value="Ir para lista" class="btn btn-primary " ></a>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

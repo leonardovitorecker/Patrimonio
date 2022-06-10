@@ -10,7 +10,7 @@
 
         <form asp-action="Create">
                  <div class="row justify-content-center" style="color:darkred">
-            <div class="col-5">
+            <div class="col-6">
                <div class="card" style="border-color:darkolivegreen">
             <div class="card-header text-center">
                 <h2>Cadastro de Patrimonio</h2>
@@ -71,17 +71,19 @@
                 <input asp-for="datagarantia" class="form-control" placeholder="Digite a data da garantia" />
                 <span asp-validation-for="datagarantia" class="text-danger"></span>
             </div>
-            <div class="card-footer md-2">
+            
+            <div class="card-footer col-md-3 mb-2">
                 <input type="submit" value="Cadastrar" class="btn btn-primary" />
-                <div>.
-     <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " ></a>
-</div>
-            </div>
+                  </div>
+                  
+          
        </div>
     </div>
 </div>
 </form>
-
+                    <div>
+                        <a asp-action="Index"> <input type="submit" value="Voltar para a lista" class="btn btn-primary " ></a>
+                    </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
